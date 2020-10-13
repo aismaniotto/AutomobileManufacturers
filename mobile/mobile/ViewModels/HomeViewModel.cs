@@ -48,7 +48,7 @@ namespace mobile.ViewModels
             {
                 await Application.Current.MainPage.DisplayAlert(
                     "Something wrong",
-                    "Some unnexpectable error happens :( Please try again",
+                    "Some unnexpectable error happens. Please try again",
                     "Ok");
             }
             finally

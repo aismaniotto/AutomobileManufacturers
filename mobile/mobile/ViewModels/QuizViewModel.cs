@@ -4,6 +4,7 @@ using mobile.Entities;
 using System.Linq;
 using System.Windows.Input;
 using Xamarin.Forms;
+using mobile.Presentation.Pages;
 
 namespace mobile.ViewModels
 {
@@ -68,10 +69,7 @@ namespace mobile.ViewModels
 
             if (currentIndex >= Questions.Count())
             {
-                var a = "";
-                var b = "";
-                //end
-                // navigate to Finish page
+                await Application.Current.MainPage.Navigation.PushAsync(new FinishPage(_answers));
             }
             else
             {

@@ -46,12 +46,12 @@ namespace mobile.Services
             return result;
         }
 
-        public async Task<float> PostAsync(List<Answer> answers)
+        public async Task<float> SubmitAnswers(List<Answer> answers)
         {
             var uri = _baseUri;
             var httpClient = new HttpClient();
 
-            var content = new StringContent(JsonConvert.SerializeObject(answers));
+            var content = new StringContent(JsonConvert.SerializeObject(answers, _serializerSettings));
             content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
             HttpResponseMessage response = await httpClient.PostAsync(uri, content);
 
