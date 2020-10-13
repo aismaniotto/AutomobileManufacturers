@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="mobile.Presentation.Pages.QuizPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
+    Title="{Binding PageTitle}"
+    Visual="Material">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout
+                Padding="20"
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span FontSize="Title" Text="Select the origin country from " />
+                            <Span
+                                FontAttributes="Bold"
+                                FontSize="Title"
+                                Text="{Binding CurrentQuestion.Title}" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <input:SelectionView
+                    ColumnNumber="1"
+                    ItemsSource="{Binding CurrentQuestion.Options}"
+                    SelectedItem="{Binding CurrentChoice}"
+                    SelectionType="RadioButton" />
+
+                <Button
+                    Margin="200,30,0,0"
+                    Command="{Binding ButtonCommand}"
+                    Text="{Binding ButtonLabel}" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

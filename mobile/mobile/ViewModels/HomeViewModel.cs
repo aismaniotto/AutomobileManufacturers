@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Windows.Input;
 using mobile.Entities;
+using mobile.Presentation.Pages;
 using mobile.Services;
 using Xamarin.Forms;
 
@@ -18,7 +19,6 @@ namespace mobile.ViewModels
             get { return _isBusy; }
             set { SetProperty(ref _isBusy, value); }
         }
-        public List<Question> Questions { get; set; }
 
         private AutomobileManufacturersService _automobileManufacturersService;
 
@@ -34,7 +34,8 @@ namespace mobile.ViewModels
             try
             {
                 IsBusy = true;
-                Questions = await _automobileManufacturersService.GetQuestions();
+                var questions = await _automobileManufacturersService.GetQuestions();
+                await Application.Current.MainPage.Navigation.PushAsync(new QuizPage(questions));
             }
             catch (WebException e)
             {

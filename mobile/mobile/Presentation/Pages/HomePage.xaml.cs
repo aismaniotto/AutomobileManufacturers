@@ -9,7 +9,6 @@ namespace mobile.Presentation.Pages
         {
             InitializeComponent();
             BindingContext = new HomeViewModel();
-
         }
     }
 }
