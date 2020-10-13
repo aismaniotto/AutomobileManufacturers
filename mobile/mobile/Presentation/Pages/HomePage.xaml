@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="mobile.Presentation.Pages.HomePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:componentviews="clr-namespace:mobile.Presentation.Components"
+    Title="Automobile Manufacturers Quiz"
+    Visual="Material">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
+                <Label
+                    FontSize="Title"
+                    HorizontalTextAlignment="Center"
+                    Text="Welcome! Let's gonna test your knowledge about the automobile manufacturers."
+                    VerticalTextAlignment="Center" />
+                <Label
+                    FontSize="Subtitle"
+                    HorizontalTextAlignment="Center"
+                    Text="Click the button below to start"
+                    VerticalTextAlignment="Center" />
+
+                <Button
+                    Margin="50"
+                    Command="{Binding StartCommand}"
+                    Text="Start!" />
+                <componentviews:LoaderView IsVisible="{Binding IsBusy}" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

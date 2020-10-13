@@ -8,7 +8,7 @@ namespace mobile
         public App()
         {
             InitializeComponent();
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new HomePage());
         }
 
         protected override void OnStart()

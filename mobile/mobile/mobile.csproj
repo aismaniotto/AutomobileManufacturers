@@ -22,5 +22,6 @@
     <Folder Include="Entities\" />
     <Folder Include="Presentation\Pages\" />
     <Folder Include="Services\" />
+    <Folder Include="Presentation\Components\" />
   </ItemGroup>
 </Project>
